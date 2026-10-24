@@ -4,7 +4,7 @@
 
   // Change this demo password if you want a different prompt.
   // IMPORTANT: a password stored in frontend JavaScript is not secure access control.
-  const FACHKREISE_DEMO_PASSWORD = "Lumea2026";
+  const FACHKREISE_DEMO_PASSWORD = "12345";
   const CONSENT_KEY = "lumea-static-demo-consent-v1";
 
   // Simple front-end password prompt for the Fachkreise demo.
