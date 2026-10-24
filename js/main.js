@@ -28,6 +28,70 @@
     fbq("track", "PageView");
   };
 
+  const trackEvent = (name, parameters, metaEvent = name) => {
+    if (typeof window.gtag === "function") {
+      const key = `lumea-${name}-ga4-sent`;
+      if (!sessionStorage.getItem(key)) {
+        window.gtag("event", name, parameters);
+        sessionStorage.setItem(key, "yes");
+      }
+    }
+    if (typeof window.fbq === "function") {
+      const key = `lumea-${name}-meta-sent`;
+      if (!sessionStorage.getItem(key)) {
+        if (metaEvent === name) {
+          window.fbq("trackCustom", metaEvent, parameters);
+        } else {
+          window.fbq("track", metaEvent, parameters);
+        }
+        sessionStorage.setItem(key, "yes");
+      }
+    }
+  };
+
+  const checkoutParameters = {
+    currency: "EUR",
+    value: 14.5,
+    items: [
+      {
+        item_id: "lumea-monthly-subscription",
+        item_name: "Lumea Monatsabo",
+        price: 14.5,
+        quantity: 1,
+      },
+    ],
+  };
+
+  const trackCheckoutEvents = () => {
+    const orderForm = document.querySelector("#order-form");
+    if (orderForm && sessionStorage.getItem("lumea-checkout-started") === "yes") {
+      trackEvent("begin_checkout", checkoutParameters, "InitiateCheckout");
+    } else if (orderForm) {
+      orderForm.addEventListener("focusin", () => {
+        sessionStorage.setItem("lumea-checkout-started", "yes");
+        trackEvent("begin_checkout", checkoutParameters, "InitiateCheckout");
+      }, { once: true });
+    }
+
+    if (document.querySelector(".thankyou")) {
+      const transactionId = sessionStorage.getItem("lumea-demo-transaction-id")
+        || `lumea-demo-${Date.now()}`;
+      sessionStorage.setItem("lumea-demo-transaction-id", transactionId);
+      trackEvent("purchase", {
+        ...checkoutParameters,
+        transaction_id: transactionId,
+      }, "Purchase");
+      trackEvent("subscription_start", {
+        ...checkoutParameters,
+        value: 29,
+        items: checkoutParameters.items.map((item) => ({ ...item, price: 29 })),
+        transaction_id: transactionId,
+        subscription_interval: "month",
+        subscription_price: 29,
+      });
+    }
+  };
+
   // Simple front-end password prompt for the Fachkreise demo.
   const fachForm = document.querySelector("#fach-form");
   if (fachForm) {
@@ -82,7 +146,10 @@
     };
     const save = (value) => {
       try { localStorage.setItem(CONSENT_KEY, JSON.stringify(value)); } catch { /* no-op */ }
-      if (value.marketing) loadMetaPixel();
+      if (value.marketing) {
+        loadMetaPixel();
+        trackCheckoutEvents();
+      }
       banner.hidden = true;
     };
     const saved = read();
@@ -109,4 +176,6 @@
       });
     });
   }
+
+  trackCheckoutEvents();
 })();
