@@ -1,19 +1,185 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lumea bestellen – erster Monat 14,50 €</title><meta name="description" content="Starte dein Lumea-Abo: erster Monat 14,50 €, danach 29 € pro Monat, jederzeit kündbar."><link rel="icon" href="favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><script defer src="js/main.js"></script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","2414924022576846");fbq("track","PageView");</script></head>
-<body><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2414924022576846&ev=PageView&noscript=1" /></noscript><div class="site-shell"><header class="site-header wrap"><a class="logo" href="index.html">lumea</a><nav class="nav"><a class="nav-muted" href="fachkreise.html">Für Fachkreise</a><a class="button button-small" href="bestellen.html">Jetzt starten</a></nav></header>
-<main class="wrap checkout-layout"><form id="order-form" class="checkout-form">
-<h1>Dein Lumea-Abo</h1>
-<p class="muted">Demo-Bestellstrecke für die Probearbeit. Es wird keine echte Zahlung ausgelöst und es werden keine Bestelldaten versendet.</p>
-<div class="field-grid"><label>Vorname<input name="firstName" autocomplete="given-name" required placeholder="Vorname"></label><label>Nachname<input name="lastName" autocomplete="family-name" required placeholder="Nachname"></label></div>
-<label>E-Mail<input type="email" name="email" autocomplete="email" required placeholder="E-Mail"></label>
-<label>Straße und Hausnummer<input name="street" autocomplete="street-address" required placeholder="Straße und Hausnummer"></label>
-<div class="field-grid field-grid-post"><label>PLZ<input name="postcode" autocomplete="postal-code" pattern="[0-9]{5}" required placeholder="PLZ"></label><label>Ort<input name="city" autocomplete="address-level2" required placeholder="Ort"></label></div>
-<fieldset><legend>Zahlungsart</legend><label class="radio-card"><input type="radio" name="payment" value="card" checked> Kreditkarte</label><label class="radio-card"><input type="radio" name="payment" value="paypal"> PayPal</label></fieldset>
-<label class="checkbox-label"><input type="checkbox" required> Ich verstehe, dass mein Abo nach dem ersten Monat automatisch zu 29,00 € pro Monat weiterläuft und jederzeit kündbar ist.</label>
-<button class="button button-wide" type="submit">Zahlungspflichtig bestellen</button>
-<p class="tiny muted">Hinweis: Dies ist ein funktionsfähiger Demo-Flow, kein echter Shop. Es findet keine Zahlung statt.</p>
-</form>
-<aside class="order-summary"><h2>Übersicht</h2><div class="summary-row"><span>Erster Monat (30 Kapseln)</span><strong>14,50 €</strong></div><div class="summary-row muted"><span>Versand</span><span>inklusive</span></div><div class="summary-row summary-total"><span>Heute</span><strong>14,50 €</strong></div><p class="muted">Danach 29,00 € pro Monat. Kündbar jederzeit.</p></aside>
-</main>
-<footer class="site-footer"><div class="wrap footer-inner"><p>Lumea Health GmbH, Berlin · Nahrungsergänzungsmittel. Nahrungsergänzungsmittel sind kein Ersatz für eine ausgewogene Ernährung und eine gesunde Lebensweise.</p><div class="footer-links"><a href="datenschutz.html">Datenschutz</a><button class="text-button" data-open-cookies>Cookie-Einstellungen</button></div></div></footer></div>
-<section class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden><div class="cookie-inner wrap"><h2 id="cookie-title">Deine Cookie-Einstellungen</h2><p>Optionale Analyse von Seitenaufrufen mit Google Analytics. <a href="datenschutz.html">Datenschutz</a></p><div class="cookie-options"><label><input type="checkbox" id="consent-analytics"> Analyse (Google Analytics)</label></div><div class="cookie-actions"><button class="button button-outline" data-consent="deny">Alle ablehnen</button><button class="button button-outline" data-consent="save">Auswahl speichern</button><button class="button" data-consent="accept">Alle akzeptieren</button></div></div></section></body></html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumea bestellen – erster Monat 14,50 €</title>
+    <meta
+      name="description"
+      content="Starte dein Lumea-Abo: erster Monat 14,50 €, danach 29 € pro Monat, jederzeit kündbar."
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LUMEA0000"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-LUMEA0000");
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header wrap">
+        <a class="logo" href="index.html">lumea</a>
+        <nav class="nav">
+          <a class="nav-muted" href="fachkreise.html">Für Fachkreise</a
+          ><a class="button button-small" href="bestellen.html"
+            >Jetzt starten</a
+          >
+        </nav>
+      </header>
+      <main class="wrap checkout-layout">
+        <form id="order-form" class="checkout-form">
+          <h1>Dein Lumea-Abo</h1>
+          <p class="muted">
+            Demo-Bestellstrecke für die Probearbeit. Es wird keine echte Zahlung
+            ausgelöst und es werden keine Bestelldaten versendet.
+          </p>
+          <div class="field-grid">
+            <label
+              >Vorname<input
+                name="firstName"
+                autocomplete="given-name"
+                required
+                placeholder="Vorname" /></label
+            ><label
+              >Nachname<input
+                name="lastName"
+                autocomplete="family-name"
+                required
+                placeholder="Nachname"
+            /></label>
+          </div>
+          <label
+            >E-Mail<input
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="E-Mail"
+          /></label>
+          <label
+            >Straße und Hausnummer<input
+              name="street"
+              autocomplete="street-address"
+              required
+              placeholder="Straße und Hausnummer"
+          /></label>
+          <div class="field-grid field-grid-post">
+            <label
+              >PLZ<input
+                name="postcode"
+                autocomplete="postal-code"
+                pattern="[0-9]{5}"
+                required
+                placeholder="PLZ" /></label
+            ><label
+              >Ort<input
+                name="city"
+                autocomplete="address-level2"
+                required
+                placeholder="Ort"
+            /></label>
+          </div>
+          <fieldset>
+            <legend>Zahlungsart</legend>
+            <label class="radio-card"
+              ><input type="radio" name="payment" value="card" checked />
+              Kreditkarte</label
+            ><label class="radio-card"
+              ><input type="radio" name="payment" value="paypal" />
+              PayPal</label
+            >
+          </fieldset>
+          <label class="checkbox-label"
+            ><input type="checkbox" required /> Ich verstehe, dass mein Abo nach
+            dem ersten Monat automatisch zu 29,00 € pro Monat weiterläuft und
+            jederzeit kündbar ist.</label
+          >
+          <button class="button button-wide" type="submit">
+            Zahlungspflichtig bestellen
+          </button>
+          <p class="tiny muted">
+            Hinweis: Dies ist ein funktionsfähiger Demo-Flow, kein echter Shop.
+            Es findet keine Zahlung statt.
+          </p>
+        </form>
+        <aside class="order-summary">
+          <h2>Übersicht</h2>
+          <div class="summary-row">
+            <span>Erster Monat (30 Kapseln)</span><strong>14,50 €</strong>
+          </div>
+          <div class="summary-row muted">
+            <span>Versand</span><span>inklusive</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Heute</span><strong>14,50 €</strong>
+          </div>
+          <p class="muted">Danach 29,00 € pro Monat. Kündbar jederzeit.</p>
+        </aside>
+      </main>
+      <footer class="site-footer">
+        <div class="wrap footer-inner">
+          <p>
+            Lumea Health GmbH, Berlin · Nahrungsergänzungsmittel.
+            Nahrungsergänzungsmittel sind kein Ersatz für eine ausgewogene
+            Ernährung und eine gesunde Lebensweise.
+          </p>
+          <div class="footer-links">
+            <a href="datenschutz.html">Datenschutz</a
+            ><button class="text-button" data-open-cookies>
+              Cookie-Einstellungen
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <section
+      class="cookie-banner"
+      id="cookie-banner"
+      role="dialog"
+      aria-labelledby="cookie-title"
+      hidden
+    >
+      <div class="cookie-inner wrap">
+        <h2 id="cookie-title">Deine Cookie-Einstellungen</h2>
+        <p>
+          Optionale Analyse von Seitenaufrufen mit Google Analytics.
+          <a href="datenschutz.html">Datenschutz</a>
+        </p>
+        <div class="cookie-options">
+          <label
+            ><input type="checkbox" id="consent-marketing" /> Marketing
+            (Meta)</label
+          >
+          <label
+            ><input type="checkbox" id="consent-analytics" /> Analyse (Google
+            Analytics)</label
+          >
+        </div>
+        <div class="cookie-actions">
+          <button class="button button-outline" data-consent="deny">
+            Alle ablehnen</button
+          ><button class="button button-outline" data-consent="save">
+            Auswahl speichern</button
+          ><button class="button" data-consent="accept">
+            Alle akzeptieren
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
