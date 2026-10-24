@@ -22,7 +22,7 @@
     if (sessionStorage.getItem("lumea-fachkreise-demo-open") === "yes") showContent();
     fachForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      if (passwordInput.value === FACHKREISE_DEMO_PASSWORD) {
+      if (passwordInput.value.trim() === FACHKREISE_DEMO_PASSWORD) {
         error.hidden = true;
         showContent();
       } else {
